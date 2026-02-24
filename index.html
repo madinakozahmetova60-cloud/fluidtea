@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Fluid Tea</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: #0a0a0a;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+    }
+    h1 {
+        font-size: 3em;
+        color: #00ffcc;
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        margin-bottom: 0.5em;
+        animation: glow 2s infinite alternate;
+    }
+    p {
+        font-size: 1.2em;
+        color: #fff;
+        text-shadow: 0 0 5px #00ffcc;
+        margin-bottom: 2em;
+    }
+    button {
+        padding: 15px 30px;
+        font-size: 1em;
+        color: #0a0a0a;
+        background: #00ffcc;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        animation: pulse 2s infinite alternate;
+    }
+    button:hover {
+        background: #00e6b8;
+        box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+        to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+    }
+
+    @keyframes pulse {
+        from { box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+        to { box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc; }
+    }
+
+    /* Анимация пара */
+    .steam {
+        position: absolute;
+        bottom: 150px;
+        width: 10px;
+        height: 50px;
+        background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+        border-radius: 50%;
+        animation: rise 3s infinite;
+    }
+    .steam:nth-child(1) { left: 48%; animation-delay: 0s; }
+    .steam:nth-child(2) { left: 50%; animation-delay: 0.5s; }
+    .steam:nth-child(3) { left: 52%; animation-delay: 1s; }
+
+    @keyframes rise {
+        0% { transform: translateY(0) scaleX(1); opacity: 0; }
+        10% { opacity: 0.5; }
+        50% { transform: translateY(-60px) scaleX(1.2); opacity: 1; }
+        100% { transform: translateY(-120px) scaleX(1.5); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+    <h1>Fluid Tea</h1>
+    <p>Открой дверь в мир китайского чая. Пиши нам в директ для заказа или записи на чайную церемонию!</p>
+    <button onclick="window.location.href='https://t.me/yourusername'">Написать в Директ</button>
+
+    <!-- Пара -->
+    <div class="steam"></div>
+    <div class="steam"></div>
+    <div class="steam"></div>
+</body>
+</html>
+    
